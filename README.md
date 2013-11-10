@@ -32,6 +32,15 @@ if ( feature.active('search') ) {
 
 Also supports AMD and standalone.
 
+## What is a feature toggle?
+
+***Continuous deployment*** is the process of testing, integrating, and deploying software in rapid cycles in order to deliver bug fixes and new features to customers as quickly as possible. It gained popular acceptance as a cornerstone of extreme programming and agile development. It is very popular among Software as a Service providers.
+
+A ***feature toggle*** system allows you to integrate features into your codebase even before they're finished and ready to release. During development, the features are toggled off by default. In order to turn them on, you must enable them manually. Using this method, you can deploy unfinished or untested changes into your production system without interfering with the user experience.
+
+Feature toggles can allow software integration cycles that run in weeks, days, or even hours, as opposed to months or years. They are an essential component in a broader continuous integration system.
+
+
 ### setFeatures(features):Object
 
 Take an optional list of features, set the feature classes on the body tag, and return the feature toggle object.
