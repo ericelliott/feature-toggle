@@ -92,3 +92,8 @@ deactivated event.
 
 * @event deactivated
 * @type {Array} deactivated features
+
+
+## Credit
+
+Eric Elliott for ["Programming JavaScript Applications"](http://ericleads.com/javascript-applications/) (O'Reilly)
