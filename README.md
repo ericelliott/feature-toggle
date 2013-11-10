@@ -46,7 +46,7 @@ Feature toggles can allow software integration cycles that run in weeks, days, o
 Take an optional list of features, set the feature classes on the body tag, and return the feature toggle object.
 
 * @param {Array} baseFeatures List of base features.
-
+* @return {Object} feature object
 
 The feature-toggle-client module returns a single function, `setFeatures()`, which determines the active features on the page.
 
