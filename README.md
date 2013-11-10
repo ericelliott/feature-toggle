@@ -30,7 +30,7 @@ if ( feature.active('search') ) {
 }
 ```
 
-Also supports AMD and standalone.
+Also supports AMD and standalone. Just load the UMD module in the `./dist` folder.
 
 ## What is a feature toggle?
 
