@@ -1,5 +1,5 @@
 /*global test, asyncTest, $, start,
-  setFeatures, ok, deepEqual*/
+  setFeatures, ok, deepEqual, equal*/
 'use strict';
 
 var getParams = function getParams() {
@@ -21,11 +21,11 @@ var getParams = function getParams() {
   feature;
 
 if (!params.ft) {
-  window.location = '?ft=foo,bar,baz';
+  window.location = '?ft=foo,bar,baz&ft-off=not-active';
 }
-feature = setFeatures();
+feature = setFeatures(['not-active']);
 
-test('/?ft=foo,bar,baz', function () {
+test('URL params', function () {
   var $body = $('body'),
     classesMock = [
       "existing-class",
@@ -39,6 +39,11 @@ test('/?ft=foo,bar,baz', function () {
   deepEqual(classes, classesMock,
     'Features should be represented by classes on ' +
     'the body tag');
+});
+
+test('ft-off param', function () {
+  equal(feature.active('not-active'), false,
+    'ft-off should disable features.');
 });
 
 asyncTest('.activate()', function () {

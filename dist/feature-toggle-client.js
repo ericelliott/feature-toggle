@@ -39,14 +39,31 @@ var union = require('mout/array/union'),
   },
 
   /**
+   * Get a list of deselected features that need
+   * to be turned off. This list will override
+   * settings from baseFeatures.
+   * @return {Array} Features list
+   */
+  getInactiveFeatures = function getInactiveFeatures() {
+    var features = getParams()['ft-off'];
+    return features ? features.split(',') : undefined;
+  },
+
+  /**
    * Combine the list of base features with
    * the features passed in via URL parameters.
    * @type {Array} active features
    */
   getActiveFeatures =
       function getActiveFeatures(baseFeatures,
-        paramFeatures) {
-    return union(baseFeatures, paramFeatures);
+        paramFeatures, inactiveFeatures) {
+    var features = union(baseFeatures, paramFeatures);
+
+    inactiveFeatures = inactiveFeatures || [];      
+
+    return features.filter(function (feature) {
+      return inactiveFeatures.indexOf(feature) === -1;
+    });
   },
 
   /**
@@ -77,11 +94,13 @@ var union = require('mout/array/union'),
    * classes on the body tag, and return the feature
    * toggle object.
    * @param {Array} baseFeatures List of base features.
+   * @return {Object} feature object
    */
   setFeatures = function setFeatures(baseFeatures) {
     var paramFeatures = getParamFeatures(),
+      inactiveFeatures = getInactiveFeatures(),
       activeFeatures = getActiveFeatures(baseFeatures,
-        paramFeatures),
+        paramFeatures, inactiveFeatures),
 
       methods = {
         /**

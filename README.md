@@ -40,6 +40,24 @@ A ***feature toggle*** system allows you to integrate features into your codebas
 
 Feature toggles can allow software integration cycles that run in weeks, days, or even hours, as opposed to months or years. They are an essential component in a broader continuous integration system.
 
+### Toggling features with URL parameters
+
+#### ft
+
+A comma-separated list of features to enable on the page.
+
+```
+http://example.com?ft=foo,bar,baz
+```
+
+#### ft-off
+
+A comma-separated list of features to disable on the page. Useful
+to override features sent from the server.
+
+```
+http://example.com?ft-off=foo,bar,baz
+```
 
 ### setFeatures(features):Object
 
