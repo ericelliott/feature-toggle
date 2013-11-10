@@ -30,6 +30,8 @@ if ( feature.active('search') ) {
 }
 ```
 
+Also supports AMD and standalone.
+
 ### setFeatures(features):Object
 
 Take an optional list of features, set the feature classes on the body tag, and return the feature toggle object.
