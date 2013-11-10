@@ -1,0 +1,46 @@
+{
+  "name": "feature-toggle",
+  "version": "0.1.0",
+  "description": "A painless feature toggle system in JavaScript. Decouple development and deployment.",
+  "browser": "feature-toggle-client.js",
+  "main": "feature-toggle.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dilvie/feature-toggle"
+  },
+  "keywords": [
+    "feature",
+    "features",
+    "toggle",
+    "switch",
+    "flag",
+    "flipper",
+    "conditional",
+    "browser",
+    "client",
+    "node"
+  ],
+  "author": "Eric Elliott",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dilvie/feature-toggle/issues"
+  },
+  "dependencies": {
+    "mout": "~0.7.1",
+    "eventemitter2": "~0.4.13",
+    "stampit": "~0.6.1"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.6.4",
+    "grunt-contrib-qunit": "~0.3.0",
+    "browserify": "~2.35.1",
+    "grunt-browserify": "~1.2.11"
+  }
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Feature Toggle Demo</title>
+    <style>
+      li {
+        display: inline-block;
+        margin-left: 1em;
+      }
+
+      .new-feature {
+        display: none;
+      }
+
+      .ft-new-feature .new-feature {
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Add <code>?ft=new-feature</code> to the end
+      of the url to see the new feature.</p>
+    <div class="menu">
+      <ul>
+        <li class="old-feature">Boring old feature</li>
+        <li class="new-feature">New feature!</li>
+      </ul>
+    </div>
+    <script src="../dist/feature-toggle-client.js">
+    </script>
+    <script>
+      // Activate the feature toggle system.
+      var ft = featureToggle();
+    </script>
+  </body>
+</html>
