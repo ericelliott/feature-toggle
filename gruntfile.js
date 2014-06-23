@@ -4,7 +4,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     jshint: {
       all: ['./test/*.js', './gruntfile.js',
-        './feature-toggle-client.js'],
+        './feature-toggle.js'],
       options: {
         curly: true,
         eqeqeq: true,
@@ -27,7 +27,7 @@ module.exports = function(grunt) {
       dist: {
         files: {
           './dist/feature-toggle-client.js':
-            ['./feature-toggle-client.js']
+            ['./feature-toggle.js']
         },
         options: {
           standalone: 'setFeatures'
