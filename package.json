@@ -1,18 +1,7 @@
 {
   "name": "feature-toggle",
   "version": "0.2.0",
-  "description": "A painless feature toggle system in JavaScript. Decouple development and deployment.",
-  "main": "feature-toggle.js",
-  "directories": {
-    "test": "test"
-  },
-  "scripts": {
-    "test": "grunt test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/dilvie/feature-toggle"
-  },
+  "description": "a painless feature toggle system in JavaScript",
   "keywords": [
     "feature",
     "features",
@@ -20,26 +9,37 @@
     "switch",
     "flag",
     "flipper",
-    "conditional",
-    "browser",
-    "client",
-    "node"
+    "conditional"
   ],
-  "author": "Eric Elliott",
-  "license": "MIT",
+  "homepage": "https://github.com/drudge/feature-toggle",
   "bugs": {
-    "url": "https://github.com/dilvie/feature-toggle/issues"
+    "url": "http://github.com/drudge/feature-toggle/issues",
+    "email": "nick@penree.com"
+  },
+  "license": {
+    "url": "https://raw.github.com/drudge/feature-toggle/master/license",
+    "type": "MIT"
+  },
+  "author": "Eric Elliott",
+  "contributors": [
+    "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
+    "Nick Penree <nick@penree.com>"
+  ],
+  "main": "src/ft.js",
+  "directories": {
+    "lib": "src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/drudge/feature-toggle.git"
+  },
+  "scripts": {
+    "test": ""
   },
   "dependencies": {
-    "mout": "~0.7.1",
-    "eventemitter2": "~0.4.13",
-    "stampit": "~0.6.1"
+    "lodash.union": "^2.4.1"
   },
-  "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-contrib-jshint": "~0.6.4",
-    "grunt-contrib-qunit": "~0.3.0",
-    "browserify": "~2.35.1",
-    "grunt-browserify": "~1.2.11"
+  "engines": {
+    "node": ">=0.8"
   }
 }
