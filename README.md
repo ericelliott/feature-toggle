@@ -9,11 +9,7 @@ A painless feature toggle system in JavaScript. Decouple development and deploym
 $ npm install --save feature-toggle
 ```
 
-
-## In the browser
-
-Using browserify:
-
+## Usage
 
 ```js
 var setFeatures = require('feature-toggle');
@@ -30,35 +26,6 @@ if ( feature.active('search') ) {
 }
 ```
 
-Also supports AMD and standalone. Just load the UMD module in the `./dist` folder.
-
-## What is a feature toggle?
-
-***Continuous deployment*** is the process of testing, integrating, and deploying software in rapid cycles in order to deliver bug fixes and new features to customers as quickly as possible. It gained popular acceptance as a cornerstone of extreme programming and agile development. It is very popular among Software as a Service providers.
-
-A ***feature toggle*** system allows you to integrate features into your codebase even before they're finished and ready to release. During development, the features are toggled off by default. In order to turn them on, you must enable them manually. Using this method, you can deploy unfinished or untested changes into your production system without interfering with the user experience.
-
-Feature toggles can allow software integration cycles that run in weeks, days, or even hours, as opposed to months or years. They are an essential component in a broader continuous integration system.
-
-### Toggling features with URL parameters
-
-#### ft
-
-A comma-separated list of features to enable on the page.
-
-```
-http://example.com?ft=foo,bar,baz
-```
-
-#### ft-off
-
-A comma-separated list of features to disable on the page. Useful
-to override features sent from the server.
-
-```
-http://example.com?ft-off=foo,bar,baz
-```
-
 ### setFeatures(features):Object
 
 Take an optional list of features, set the feature classes on the body tag, and return the feature toggle object.
@@ -71,7 +38,6 @@ The feature-toggle-client module returns a single function, `setFeatures()`, whi
 It does so by combining:
 
 * Features passed into `setFeatures()`
-* Features passed as query parameters `?ft=feature1,feature2,feature3`
 
 ```js
 var feature = setFeatures(['feature1', 'feature2']);
@@ -111,7 +77,6 @@ deactivated event.
 * @event deactivated
 * @type {Array} deactivated features
 
+## License
 
-## Credit
-
-Eric Elliott for ["Programming JavaScript Applications"](http://ericleads.com/javascript-applications/) (O'Reilly)
+MIT

@@ -1,1 +1,58 @@
+# node
+
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+
+pids
+logs
+results
+
+npm-debug.log
 node_modules
+
+
+# osx
+
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+
+## Thumbnails
+._*
+
+## Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# textmate
+
+*.tmproj
+*.tmproject
+tmtags
+
+
+# vim
+
+*.s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
+
+
+# subl
+
+*.sublime-workspace
+
+# component
+
+components
+build
