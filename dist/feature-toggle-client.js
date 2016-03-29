@@ -1,5 +1,4 @@
-!function(e){"object"==typeof exports?module.exports=e():"function"==typeof define&&define.amd?define(e):"undefined"!=typeof window?window.setFeatures=e():"undefined"!=typeof global?global.setFeatures=e():"undefined"!=typeof self&&(self.setFeatures=e())}(function(){var define,module,exports;
-return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+!function(e){"object"==typeof exports?module.exports=e():"function"==typeof define&&define.amd?define(e):"undefined"!=typeof window?window.setFeatures=e():"undefined"!=typeof global?global.setFeatures=e():"undefined"!=typeof self&&(self.setFeatures=e())}(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 'use strict';
 
 var union = require('mout/array/union'),
@@ -14,7 +13,7 @@ var union = require('mout/array/union'),
    */
   getParams = function getParams() {
     var params = {};
-    if (location.search) {
+    if (window.location.search) {
       var parts = location.search.slice(1).split('&');
 
       parts.forEach(function (part) {
@@ -173,7 +172,6 @@ var union = require('mout/array/union'),
   };
 
 module.exports = setFeatures;
-
 },{"events":3,"mout/array/contains":6,"mout/array/union":9,"stampit":38}],2:[function(require,module,exports){
 
 
