@@ -14,7 +14,7 @@ var union = require('mout/array/union'),
   getParams = function getParams() {
     var params = {};
     if (window.location.search) {
-      var parts = location.search.slice(1).split('&');
+      var parts = window.location.search.slice(1).split('&');
 
       parts.forEach(function (part) {
         var pair = part.split('=');
@@ -58,7 +58,7 @@ var union = require('mout/array/union'),
         paramFeatures, inactiveFeatures) {
     var features = union(baseFeatures, paramFeatures);
 
-    inactiveFeatures = inactiveFeatures || [];      
+    inactiveFeatures = inactiveFeatures || [];
 
     return features.filter(function (feature) {
       return inactiveFeatures.indexOf(feature) === -1;
@@ -73,7 +73,7 @@ var union = require('mout/array/union'),
    *
    * .new-feature { display: none; }
    * .ft-new-feature .new-feature { display: block; }
-   * 
+   *
    * @param {Array} features An array of active features.
    */
   setFlags = function setFlags(features) {
@@ -84,7 +84,7 @@ var union = require('mout/array/union'),
         .className.split(' ').filter(function (className) {
           return !className.match(/^ft/);
         });
-    document.getElementsByTagName('body')[0].className = 
+    document.getElementsByTagName('body')[0].className =
       classNames.join(' ') + ' ' + featureClasses;
   },
 
@@ -104,7 +104,7 @@ var union = require('mout/array/union'),
       methods = {
         /**
          * Check to see if a feature is active.
-         * @param  {String} feature 
+         * @param  {String} feature
          * @return {Boolean}
          */
         active: function active(feature) {
@@ -116,7 +116,7 @@ var union = require('mout/array/union'),
         /**
          * Activate a list of features.
          * @emits activated
-         * @param  {Array} features 
+         * @param  {Array} features
          * @return {Object} this (for chaining)
          */
         /**
@@ -135,7 +135,7 @@ var union = require('mout/array/union'),
         /**
          * Deactivate a list of features.
          * @emits deactivated
-         * @param  {Array} features 
+         * @param  {Array} features
          * @return {Object} this (for chaining)
          */
         /**
@@ -143,9 +143,9 @@ var union = require('mout/array/union'),
          *
          * @event deactivated
          * @type {Array} deactivated features
-         */        
+         */
         deactivate: function deactivate(features) {
-          activeFeatures = 
+          activeFeatures =
             activeFeatures.filter(function (feature) {
               return !contains(features, feature);
             });
@@ -172,6 +172,7 @@ var union = require('mout/array/union'),
   };
 
 module.exports = setFeatures;
+
 },{"events":3,"mout/array/contains":6,"mout/array/union":9,"stampit":38}],2:[function(require,module,exports){
 
 
