@@ -114,4 +114,4 @@ deactivated event.
 
 ## Credit
 
-Eric Elliott for ["Programming JavaScript Applications"](http://ericleads.com/javascript-applications/) (O'Reilly)
+Eric Elliott for ["Programming JavaScript Applications"](http://pjabook.com) (O'Reilly)
