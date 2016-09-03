@@ -1,5 +1,4 @@
-!function(e){"object"==typeof exports?module.exports=e():"function"==typeof define&&define.amd?define(e):"undefined"!=typeof window?window.setFeatures=e():"undefined"!=typeof global?global.setFeatures=e():"undefined"!=typeof self&&(self.setFeatures=e())}(function(){var define,module,exports;
-return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+!function(e){"object"==typeof exports?module.exports=e():"function"==typeof define&&define.amd?define(e):"undefined"!=typeof window?window.setFeatures=e():"undefined"!=typeof global?global.setFeatures=e():"undefined"!=typeof self&&(self.setFeatures=e())}(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 'use strict';
 
 var union = require('mout/array/union'),
@@ -14,8 +13,8 @@ var union = require('mout/array/union'),
    */
   getParams = function getParams() {
     var params = {};
-    if (location.search) {
-      var parts = location.search.slice(1).split('&');
+    if (window.location.search) {
+      var parts = window.location.search.slice(1).split('&');
 
       parts.forEach(function (part) {
         var pair = part.split('=');
@@ -59,7 +58,7 @@ var union = require('mout/array/union'),
         paramFeatures, inactiveFeatures) {
     var features = union(baseFeatures, paramFeatures);
 
-    inactiveFeatures = inactiveFeatures || [];      
+    inactiveFeatures = inactiveFeatures || [];
 
     return features.filter(function (feature) {
       return inactiveFeatures.indexOf(feature) === -1;
@@ -74,7 +73,7 @@ var union = require('mout/array/union'),
    *
    * .new-feature { display: none; }
    * .ft-new-feature .new-feature { display: block; }
-   * 
+   *
    * @param {Array} features An array of active features.
    */
   setFlags = function setFlags(features) {
@@ -85,7 +84,7 @@ var union = require('mout/array/union'),
         .className.split(' ').filter(function (className) {
           return !className.match(/^ft/);
         });
-    document.getElementsByTagName('body')[0].className = 
+    document.getElementsByTagName('body')[0].className =
       classNames.join(' ') + ' ' + featureClasses;
   },
 
@@ -105,7 +104,7 @@ var union = require('mout/array/union'),
       methods = {
         /**
          * Check to see if a feature is active.
-         * @param  {String} feature 
+         * @param  {String} feature
          * @return {Boolean}
          */
         active: function active(feature) {
@@ -117,7 +116,7 @@ var union = require('mout/array/union'),
         /**
          * Activate a list of features.
          * @emits activated
-         * @param  {Array} features 
+         * @param  {Array} features
          * @return {Object} this (for chaining)
          */
         /**
@@ -136,7 +135,7 @@ var union = require('mout/array/union'),
         /**
          * Deactivate a list of features.
          * @emits deactivated
-         * @param  {Array} features 
+         * @param  {Array} features
          * @return {Object} this (for chaining)
          */
         /**
@@ -144,9 +143,9 @@ var union = require('mout/array/union'),
          *
          * @event deactivated
          * @type {Array} deactivated features
-         */        
+         */
         deactivate: function deactivate(features) {
-          activeFeatures = 
+          activeFeatures =
             activeFeatures.filter(function (feature) {
               return !contains(features, feature);
             });

@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "description": "A painless feature toggle system in JavaScript. Decouple development and deployment.",
   "browser": "feature-toggle-client.js",
-  "main": "feature-toggle.js",
+  "main": "feature-toggle-client.js",
   "directories": {
     "test": "test"
   },
