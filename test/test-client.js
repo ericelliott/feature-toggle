@@ -1,6 +1,6 @@
 /*global test, asyncTest, $, start,
   setFeatures, ok, deepEqual, equal*/
-'use strict';
+// 'use strict';
 
 var getParams = function getParams() {
     var params = {};
@@ -9,8 +9,12 @@ var getParams = function getParams() {
 
       parts.forEach(function (part) {
         var pair = part.split('=');
-        pair[0] = decodeURIComponent(pair[0]);
-        pair[1] = decodeURIComponent(pair[1]);
+        try {
+          pair[0] = decodeURIComponent(pair[0]);
+          pair[1] = decodeURIComponent(pair[1]);
+        } catch (e) {
+          return;
+        }
         params[pair[0]] = (pair[1] !== 'undefined') ?
           pair[1] : true;
       });
@@ -88,4 +92,26 @@ asyncTest('.deactivate()', function () {
     start();
   }, 0);
 
+});
+
+test('Not crash on invalid GET parameter', function () {
+  var currentFeature;
+  var result;
+  var customWindow = {
+    window: {
+      location: {
+        search: '?ft=foo&ft-off=bar,:%№:%"'
+      }
+    }
+  };
+
+  try {
+    with (customWindow) {
+      currentFeature = setFeatures();
+    }
+    result = true;
+  } catch (e) {
+    result = false;
+  }
+    ok(result, 'Params parsing should not throw Error');
 });
