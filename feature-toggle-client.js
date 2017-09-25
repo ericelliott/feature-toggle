@@ -12,6 +12,11 @@ var union = require('mout/array/union'),
    */
   getParams = function getParams() {
     var params = {};
+
+    if (typeof window === 'undefined') {
+      return params;
+    }
+
     if (window.location.search) {
       var parts = window.location.search.slice(1).split('&');
 
@@ -87,6 +92,10 @@ var union = require('mout/array/union'),
    * @param {Array} features An array of active features.
    */
   setFlags = function setFlags(features) {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
     var featureClasses = features.map(function (feature) {
         return 'ft-' + feature;
       }).join(' '),
