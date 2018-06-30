@@ -9,6 +9,10 @@ A painless feature toggle system in JavaScript. Decouple development and deploym
 $ npm install --save feature-toggle
 ```
 
+## Status
+
+This library is a useful reference, but is no longer maintained for production use. It has been deprecated in favor of [react-feature-toggles](https://github.com/paralleldrive/react-feature-toggles).
+
 
 ## In the browser
 
