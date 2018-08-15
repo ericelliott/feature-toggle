@@ -18,8 +18,19 @@ var union = require('mout/array/union'),
 
       parts.forEach(function (part) {
         var pair = part.split('=');
-        pair[0] = decodeURIComponent(pair[0]);
-        pair[1] = decodeURIComponent(pair[1]);
+        try {
+          pair[0] = decodeURIComponent(pair[0]);
+          pair[1] = decodeURIComponent(pair[1]);
+        } catch (e) {
+          /**
+           * Because parsing of pairs can fail
+           * need to catch this errors
+           * and skip this step
+           * For i.e. on get parameter: foo=:%№:%
+           * parsing is failing
+           */
+          return;
+        }
         params[pair[0]] = (pair[1] !== 'undefined') ?
           pair[1] : true;
       });
