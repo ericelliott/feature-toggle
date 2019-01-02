@@ -6,6 +6,6 @@ declare module 'feature-toggle' {
      deactivate: (featureName: string) => FeatureToggle;
    }
  }
-  function featureToggle(feature: string[]): featureToggle.FeatureToggle;
+  function featureToggle(features: string[]): featureToggle.FeatureToggle;
   export = featureToggle;
 }
