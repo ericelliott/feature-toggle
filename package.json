@@ -4,6 +4,7 @@
   "description": "A painless feature toggle system in JavaScript. Decouple development and deployment.",
   "browser": "feature-toggle-client.js",
   "main": "feature-toggle-client.js",
+  "typings": "./feature-toggle-client.d.ts",
   "directories": {
     "test": "test"
   },
