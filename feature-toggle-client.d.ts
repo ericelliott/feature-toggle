@@ -2,8 +2,8 @@ declare module 'feature-toggle' {
   namespace featureToggle {
     interface FeatureToggle {
      active: (featureName: string) => boolean;
-     activate: (featureName: string) => FeatureToggle;
-     deactivate: (featureName: string) => FeatureToggle;
+     activate: (features: string[]) => FeatureToggle;
+     deactivate: (features: string[]) => FeatureToggle;
    }
  }
   function featureToggle(features: string[]): featureToggle.FeatureToggle;
